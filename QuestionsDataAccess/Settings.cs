@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace QuestionsDataAccess
+namespace QuestionsDataAccess.Models
 {
     public class Settings
     {

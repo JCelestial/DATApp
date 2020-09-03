@@ -1,4 +1,7 @@
+using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using QuestionsDataAccess.Models;
 
@@ -6,7 +9,7 @@ namespace QuestionsDataAccess.Repository
 {
     public interface IQuestionRepository
     {
-        Task<IEnumerable<QuestionModel>> GetAllQuestions();
-        Task<QuestionModel> GetQuestion(string id);
+        Task<IEnumerable<Question>> GetAllQuestions();
+        Task<Question> GetQuestion(string id);
     }
 }

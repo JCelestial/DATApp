@@ -1,8 +1,10 @@
 using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.Extensions.Options;
-using QuestionsDataAccess.Models;
 
-namespace QuestionsDataAccess
+namespace QuestionsDataAccess.Models
 {
     public class QuestionsDBContext : IQuestionContext
     {
@@ -14,6 +16,7 @@ namespace QuestionsDataAccess
             mongoDatabase = client.GetDatabase(options.Value.Database);
         }
 
-        public IMongoCollection<QuestionModel> Questions => mongoDatabase.GetCollection<QuestionModel>("Questions");
+        public IMongoCollection<Question> Questions => mongoDatabase.GetCollection<Question>("Questions");
+
     }
 }

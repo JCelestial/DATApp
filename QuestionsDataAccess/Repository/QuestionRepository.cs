@@ -9,24 +9,42 @@ using System.Threading.Tasks;
 
 namespace QuestionsDataAccess.Repository
 {
-    public class QuestionsRepository : IQuestionRepository
+    public class QuestionRepository : IQuestionRepository
     {
+        #region Context and Constructor
         private readonly IQuestionContext _context;
 
-        public QuestionsRepository(IQuestionContext context)
+        public QuestionRepository(IQuestionContext context)
         {
             _context = context;
         }
+        #endregion
 
-        public async Task<IEnumerable<QuestionModel>> GetAllQuestions()
+        #region Fetch all Questions
+        public async Task<IEnumerable<Question>> GetAllQuestions()
         {
             return await _context.Questions.Find(new BsonDocument()).ToListAsync();
         }
 
-        public async Task<QuestionModel> GetQuestion(string id)
+        public async Task<Question> GetQuestion(string id)
         {
-            FilterDefinition<QuestionModel> filter = Builders<QuestionModel>.Filter.Eq(x => x.QuestionId, id);
+            FilterDefinition<Question> filter = Builders<Question>.Filter.Eq(x => x.QuestionId, id);
             return await _context.Questions.Find(filter).FirstOrDefaultAsync();
         }
+
+        #endregion
+
+        // Next Features to implement
+        // Drill down into a question for more details
+        // go to the next question
+
+        //public async Task<QuestionModel> GetQuestion()
+        //{
+        //}
+
+        //public void NextQuestion()
+        //{
+
+        //}
     }
 }

@@ -1,10 +1,13 @@
 using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using QuestionsDataAccess.Models;
 
 namespace QuestionsDataAccess
 {
     public interface IQuestionContext
     {
-        IMongoCollection<QuestionModel> Questions { get; }
+        IMongoCollection<Question> Questions { get; }
     }
 }

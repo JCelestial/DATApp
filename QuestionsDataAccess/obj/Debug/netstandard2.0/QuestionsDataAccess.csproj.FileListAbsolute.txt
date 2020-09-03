@@ -1,9 +1,0 @@
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netstandard2.0\QuestionsDataAccess.deps.json
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netstandard2.0\QuestionsDataAccess.dll
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netstandard2.0\QuestionsDataAccess.pdb
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.csprojAssemblyReference.cache
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.AssemblyInfoInputs.cache
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.AssemblyInfo.cs
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.csproj.CoreCompileInputs.cache
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.dll
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netstandard2.0\QuestionsDataAccess.pdb
