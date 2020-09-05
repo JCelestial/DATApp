@@ -16,7 +16,7 @@ namespace QuestionsDataAccess.Models
 
         [BsonElement("questionID")]
         [Required]
-        public string QuestionId { get; set; }
+        public int QuestionId { get; set; }
 
         [BsonElement("question")]
         [Required]

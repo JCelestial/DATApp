@@ -90,9 +90,21 @@
             @Html.DisplayFor(model => model.IsBookmarked)
         </dd>
     </dl>
+
+    <span>
+        <span>
+               @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {id = ++Model.QuestionId})
+        </span>
+        <br />
+    </span>
+    <span>
+        <span>
+               @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {id = Model.QuestionId - 2})
+        </span>
+    </span>
 </div>
 
 
 <div>
-    <a asp-action="GetQuestions">Back to Questions List</a>
+    <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a>
 </div>

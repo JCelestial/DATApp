@@ -108,6 +108,8 @@ C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Quest
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.RazorCoreGenerate.cache
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestionById.cshtml.g.cs
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestions.cshtml.g.cs
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -122,5 +124,3 @@ C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\stati
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.dll
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.pdb
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.genruntimeconfig.cache
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestions.cshtml.g.cs
-C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestionById.cshtml.g.cs

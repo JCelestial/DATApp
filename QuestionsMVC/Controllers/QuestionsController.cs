@@ -32,7 +32,7 @@ namespace QuestionsMVC.Controllers
 
         // GET: Questions/Details/5
         [HttpGet]
-        public async Task<ActionResult> GetQuestionById(string id)
+        public async Task<ActionResult> GetQuestionById(int id)
         {
             var question = await _repo.GetQuestion(id);
             if (question == null)
@@ -41,6 +41,13 @@ namespace QuestionsMVC.Controllers
             }
             return View(question);
         }
+
+
+        // public async Task GetNextQuestion(QuestionEntity currQuestion)
+        // {
+        //     int nextId = currQuestion.QuestionId++;
+        //     await GetQuestionById(nextId);
+        // }
 
         // // GET: Questions/Create
         // public ActionResult Create()

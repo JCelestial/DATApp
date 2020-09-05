@@ -26,7 +26,7 @@ namespace QuestionsDataAccess.Repository
             return await _context.Questions.Find(new BsonDocument()).ToListAsync();
         }
 
-        public async Task<QuestionEntity> GetQuestion(string id)
+        public async Task<QuestionEntity> GetQuestion(int id)
         {
             FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, id);
             return await _context.Questions.Find(filter).FirstOrDefaultAsync();
