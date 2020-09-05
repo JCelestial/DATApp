@@ -44,25 +44,6 @@ namespace QuestionsMVC.Controllers
             }
         }
 
-        // GET: Questions/Details/5
-        // [HttpGet]
-        // public async Task<ActionResult> GetQuestionById(int currId)
-        // {
-        //     try
-        //     {
-        //         var question = await _repo.GetQuestion(currId);
-        //             if (question != null)
-        //             {
-        //                 return View(question);
-        //             }
-        //             return View("Error");
-        //     }
-        //     catch
-        //     {
-        //         return View("Error");
-        //     }
-        // }
-
         [HttpGet]
         public async Task<ActionResult> GetQuestionById(Traversal trav)
         {

@@ -5,7 +5,7 @@
     Layout = "_Layout";
 }
 
-@* <h1>GetQuestionById</h1> *@
+<h2>Section: @Html.DisplayFor(model => model.Section)</h2>
 
 <div>
     @* <h4>QuestionEntity</h4> *@
@@ -21,8 +21,8 @@
         @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.QuestionString)
         </dt> *@
-        <dd class = "col-sm-10">
-            <strong>@Html.DisplayFor(model => model.QuestionString)</strong>
+        <dd class = "col-md-10">
+            <h5>@Html.DisplayFor(model => model.QuestionString)</h5>
         </dd>
         @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CorrectAns)
@@ -74,14 +74,14 @@
     {
         <div>
             <input type="radio" id="@Html.DisplayFor(modelItem => item.Choice)" name="choices" value="@Html.DisplayFor(modelItem => item.Choice)" />
-            <label for="@Html.DisplayFor(modelItem => item.Choice)">@Html.DisplayFor(modelItem => item.Choice).) <span>@Html.DisplayFor(modelItem => item.Details)</span></label><br />
+            <strong><label for="@Html.DisplayFor(modelItem => item.Choice)">@Html.DisplayFor(modelItem => item.Choice).) <span>@Html.DisplayFor(modelItem => item.Details)</span></label></strong><br />
         </div>
     }
 </form>
 
 <br />
 <br />
-<div>
+<div class="container">
     <dl class="row">
         <dt class="col-sm-1">
             Bookmark Question
@@ -91,22 +91,17 @@
         </dd>
     </dl>
 
-    <span>
-        <span>
-               @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {currId = Model.QuestionId, travId = ++Model.QuestionId})
-        </span>
-        <br />
-    </span>
-    <span>
-        <span>
-               @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {currId = --Model.QuestionId, travId = --Model.QuestionId})
-        </span>
-    </span>
-</div>
+    <br />
 
-
-<div>
-    <span>
-    <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a>
-    </span>
+    <div class="row">
+        <div class="col-md-4">
+            @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {currId = Model.QuestionId, travId = --Model.QuestionId})
+        </div>
+        <div class="col-md-4">
+            <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a>
+        </div>
+        <div class="col-md-4">
+            @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {currId = ++Model.QuestionId, travId = ++Model.QuestionId})
+        </div>
+    </div>
 </div>

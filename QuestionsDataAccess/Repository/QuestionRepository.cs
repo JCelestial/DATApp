@@ -51,19 +51,7 @@ namespace QuestionsDataAccess.Repository
             }
         }
         #endregion
-        // public async Task<QuestionEntity> GetQuestion(int currId, int trav)
-        // {
-        //     FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, trav);
-        //     var foundQuestion = await _context.Questions.Find(filter).FirstAsync();
-        //     if (foundQuestion != null)
-        //     {
-        //         return foundQuestion;
-        //     }
-        //     else
-        //     {
-        //         return await GetQuestion(currId);
-        //     }
-        // }
+
 
 
         // Next Features to implement
