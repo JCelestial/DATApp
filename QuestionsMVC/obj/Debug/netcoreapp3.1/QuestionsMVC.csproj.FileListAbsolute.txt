@@ -122,3 +122,5 @@ C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\stati
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.dll
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.pdb
 C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\QuestionsMVC.genruntimeconfig.cache
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestions.cshtml.g.cs
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Questions\GetQuestionById.cshtml.g.cs
