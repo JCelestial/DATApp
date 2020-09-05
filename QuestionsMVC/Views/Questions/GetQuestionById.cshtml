@@ -93,18 +93,20 @@
 
     <span>
         <span>
-               @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {id = ++Model.QuestionId})
+               @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {currId = Model.QuestionId, travId = ++Model.QuestionId})
         </span>
         <br />
     </span>
     <span>
         <span>
-               @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {id = Model.QuestionId - 2})
+               @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {currId = --Model.QuestionId, travId = --Model.QuestionId})
         </span>
     </span>
 </div>
 
 
 <div>
+    <span>
     <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a>
+    </span>
 </div>

@@ -10,6 +10,6 @@ namespace QuestionsDataAccess.Repository
     public interface IQuestionRepository
     {
         Task<IEnumerable<QuestionEntity>> GetAllQuestions();
-        Task<QuestionEntity> GetQuestion(int id);
+        Task<QuestionEntity> GetQuestion(Traversal trav);
     }
 }

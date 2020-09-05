@@ -51,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.QuestionId)
             </td> *@
             <td style="word-wrap: break-word">
-                <a asp-controller="Questions" asp-action="GetQuestionById" asp-route-id="@item.QuestionId">@Html.DisplayFor(modelItem => item.QuestionString)</a>
+                @Html.ActionLink(item.QuestionString, "GetQuestionById", "Questions", new {currId = item.QuestionId, travId = 0})
             </td>
             @* <td>
                 @Html.DisplayFor(modelItem => item.CorrectAns)

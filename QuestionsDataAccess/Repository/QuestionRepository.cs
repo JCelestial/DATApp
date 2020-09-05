@@ -23,16 +23,48 @@ namespace QuestionsDataAccess.Repository
         #region Fetch all Questions
         public async Task<IEnumerable<QuestionEntity>> GetAllQuestions()
         {
-            return await _context.Questions.Find(new BsonDocument()).ToListAsync();
+            var qList =  await _context.Questions.Find(new BsonDocument()).ToListAsync();
+            var sorted = qList.OrderBy(x => x.QuestionId).ToList();
+            return sorted;
+
         }
 
-        public async Task<QuestionEntity> GetQuestion(int id)
+        public async Task<QuestionEntity> GetQuestion(Traversal trav)
         {
-            FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, id);
-            return await _context.Questions.Find(filter).FirstOrDefaultAsync();
+            FilterDefinition<QuestionEntity> curr = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, trav.CurrId);
+            try
+            {
+                if (trav.TravId != 0)
+                {
+                    FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, trav.TravId);
+                    var foundQuestion = await _context.Questions.Find(filter).FirstAsync();
+                    return foundQuestion;
+                }
+                else
+                {
+                    return await _context.Questions.Find(curr).FirstOrDefaultAsync();
+                }
+            }
+            catch
+            {
+                return await _context.Questions.Find(curr).FirstOrDefaultAsync();
+            }
         }
-
         #endregion
+        // public async Task<QuestionEntity> GetQuestion(int currId, int trav)
+        // {
+        //     FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, trav);
+        //     var foundQuestion = await _context.Questions.Find(filter).FirstAsync();
+        //     if (foundQuestion != null)
+        //     {
+        //         return foundQuestion;
+        //     }
+        //     else
+        //     {
+        //         return await GetQuestion(currId);
+        //     }
+        // }
+
 
         // Next Features to implement
         // Drill down into a question for more details
