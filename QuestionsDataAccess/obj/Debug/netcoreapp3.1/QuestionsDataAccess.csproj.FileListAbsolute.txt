@@ -1,0 +1,9 @@
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netcoreapp3.1\QuestionsDataAccess.deps.json
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netcoreapp3.1\QuestionsDataAccess.dll
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\bin\Debug\netcoreapp3.1\QuestionsDataAccess.pdb
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.csprojAssemblyReference.cache
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.AssemblyInfoInputs.cache
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.AssemblyInfo.cs
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.dll
+C:\Users\jarel\DAT-App\QuestionModule\QuestionsDataAccess\obj\Debug\netcoreapp3.1\QuestionsDataAccess.pdb

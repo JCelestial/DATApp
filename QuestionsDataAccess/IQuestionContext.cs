@@ -8,6 +8,6 @@ namespace QuestionsDataAccess
 {
     public interface IQuestionContext
     {
-        IMongoCollection<Question> Questions { get; }
+        IMongoCollection<QuestionEntity> Questions { get; }
     }
 }

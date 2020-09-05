@@ -21,14 +21,14 @@ namespace QuestionsDataAccess.Repository
         #endregion
 
         #region Fetch all Questions
-        public async Task<IEnumerable<Question>> GetAllQuestions()
+        public async Task<IEnumerable<QuestionEntity>> GetAllQuestions()
         {
             return await _context.Questions.Find(new BsonDocument()).ToListAsync();
         }
 
-        public async Task<Question> GetQuestion(string id)
+        public async Task<QuestionEntity> GetQuestion(string id)
         {
-            FilterDefinition<Question> filter = Builders<Question>.Filter.Eq(x => x.QuestionId, id);
+            FilterDefinition<QuestionEntity> filter = Builders<QuestionEntity>.Filter.Eq(x => x.QuestionId, id);
             return await _context.Questions.Find(filter).FirstOrDefaultAsync();
         }
 

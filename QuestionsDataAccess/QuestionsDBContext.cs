@@ -16,7 +16,7 @@ namespace QuestionsDataAccess.Models
             mongoDatabase = client.GetDatabase(options.Value.Database);
         }
 
-        public IMongoCollection<Question> Questions => mongoDatabase.GetCollection<Question>("Questions");
+        public IMongoCollection<QuestionEntity> Questions => mongoDatabase.GetCollection<QuestionEntity>("Questions");
 
     }
 }
