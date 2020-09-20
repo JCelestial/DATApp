@@ -11,7 +11,7 @@ namespace QuestionsDataAccess.Repository
 {
     public class QuestionRepository : IQuestionRepository
     {
-        #region Context and Constructor
+        #region CONTEXT AND CONSTRUCTOR
         private readonly IQuestionContext _context;
 
         public QuestionRepository(IQuestionContext context)
@@ -20,12 +20,24 @@ namespace QuestionsDataAccess.Repository
         }
         #endregion
 
-        #region Fetch all Questions
+        #region FETCH QUESTIONS
         public async Task<IEnumerable<QuestionEntity>> GetAllQuestions()
         {
-            var qList =  await _context.Questions.Find(new BsonDocument()).ToListAsync();
-            var sorted = qList.OrderBy(x => x.QuestionId).ToList();
-            return sorted;
+            IEnumerable<QuestionEntity> qList = new List<QuestionEntity>();
+            try
+            {
+                qList =  await _context.Questions.Find(new BsonDocument()).ToListAsync();
+                var sorted = qList.OrderBy(x => x.QuestionId).ToList();
+                return sorted;
+            }
+            catch
+            {
+                qList = null;
+                return qList;
+            }
+
+
+            // Refactor later to retreive based on section and/or QuestionID
 
         }
 
@@ -52,7 +64,36 @@ namespace QuestionsDataAccess.Repository
         }
         #endregion
 
+        #region SUBMIT EXAM
+        public async Task<IEnumerable<string>> FetchCorrectAns()
+        {
+            IEnumerable<QuestionEntity> qEntity = new List<QuestionEntity>();
+            ICollection<string> qAns = new List<string>();
+            try
+            {
+                qEntity = await GetAllQuestions();
+                if (qEntity != null)
+                {
+                    foreach (var q in qEntity)
+                    {
+                        qAns.Add(q.CorrectAns);
+                    }
+                    return qAns;
+                }
+                else
+                {
+                    throw new Exception(message: "Correct Answer array was not properly");
+                }
+            }
+            catch
+            {
+                qAns = null;
+                return qAns;
+            }
+        }
 
+
+        #endregion
 
         // Next Features to implement
         // Drill down into a question for more details

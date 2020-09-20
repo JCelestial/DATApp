@@ -11,5 +11,6 @@ namespace QuestionsDataAccess.Repository
     {
         Task<IEnumerable<QuestionEntity>> GetAllQuestions();
         Task<QuestionEntity> GetQuestion(Traversal trav);
+        Task<IEnumerable<string>> FetchCorrectAns();
     }
 }

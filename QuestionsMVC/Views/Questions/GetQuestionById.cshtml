@@ -72,17 +72,28 @@
 <form>
     @foreach (var item in Model.AnswerChoices)
     {
+        @* <div>
+            <input type="button" id="@Html.DisplayFor(modelItem => item.Choice)" name="choices" value="@Html.DisplayFor(modelItem => item.Choice)" class="btn btn-light"/>
+            <label for="@Html.DisplayFor(modelItem => item.Choice)">@Html.DisplayFor(modelItem => item.Choice).) <span>@Html.DisplayFor(modelItem => item.Details)</span></label><br />
+        </div> *@
         <div>
-            <input type="radio" id="@Html.DisplayFor(modelItem => item.Choice)" name="choices" value="@Html.DisplayFor(modelItem => item.Choice)" />
-            <strong><label for="@Html.DisplayFor(modelItem => item.Choice)">@Html.DisplayFor(modelItem => item.Choice).) <span>@Html.DisplayFor(modelItem => item.Details)</span></label></strong><br />
+            <input 
+            type="button"
+            class="btn btn-light btn-block"
+            name="choices"
+            value="@Html.DisplayFor(modelItem => item.Choice).) @Html.DisplayFor(modelItem => item.Details)"
+            />
         </div>
+        <br />
+
+
     }
 </form>
 
 <br />
 <br />
-<div class="container">
-    <dl class="row">
+<div class="container-fluid">
+    @* <dl class="row">
         <dt class="col-sm-1">
             Bookmark Question
         </dt>
@@ -91,17 +102,39 @@
         </dd>
     </dl>
 
+    <br /> *@
+
+
+    <br />
     <br />
 
     <div class="row">
-        <div class="col-md-4">
-            @Html.ActionLink("Go to the Previous Question", "GetQuestionById", "Questions", new {currId = Model.QuestionId, travId = --Model.QuestionId})
+        <div class="col-lg-4">
+            @Html.ActionLink(
+                "Go to the Previous Question", 
+                "GetQuestionById", 
+                "Questions", 
+                new {currId = Model.QuestionId, travId = --Model.QuestionId}, 
+                htmlAttributes: new { @class = "btn btn-light", @role = "button" }
+            )
         </div>
-        <div class="col-md-4">
-            <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a>
+        <div class="col-lg-4">
+                @* <a asp-action="GetQuestions"><strong>Back to Questions List</strong></a> *@
+            @Html.ActionLink(
+                "Beck to Questions List",
+                "GetQuestions",
+                "Questions",
+                htmlAttributes: new { @class = "btn btn-secondary", @role = "button" }
+            )
         </div>
-        <div class="col-md-4">
-            @Html.ActionLink("Go to the Next Question", "GetQuestionById", "Questions", new {currId = ++Model.QuestionId, travId = ++Model.QuestionId})
+        <div class="col-lg-4">
+            @Html.ActionLink(
+                "Go to the Next Question", 
+                "GetQuestionById", 
+                "Questions", new {currId = ++Model.QuestionId, travId = ++Model.QuestionId},
+                htmlAttributes: new { @class = "btn btn-light", @role = "button" }
+            )
         </div>
     </div>
 </div>
+

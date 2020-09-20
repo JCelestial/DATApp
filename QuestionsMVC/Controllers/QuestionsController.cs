@@ -14,6 +14,7 @@ using QuestionsMVC.Models;
 
 namespace QuestionsMVC.Controllers
 {
+    [RequireHttps]
     public class QuestionsController : Controller
     {
         #region Constructor
@@ -61,6 +62,12 @@ namespace QuestionsMVC.Controllers
                 return View("Error");
             }
         }
+
+
+        // public async Task<ActionResult> FinishExam()
+        // {
+            
+        // }
 
 
     }
