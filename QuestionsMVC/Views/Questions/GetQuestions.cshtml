@@ -5,11 +5,8 @@
     Layout = "_Layout";
 }
 
-@* <h1>Section</h1> *@
 
-@* <p>
-    <a asp-action="Create">Create New</a>
-</p> *@
+
 <table class="table">
     <thead>
         <tr>
@@ -17,7 +14,7 @@
                 @Html.DisplayNameFor(model => model.QuestionId)
             </th> *@
             <th>
-                Questions
+                
             </th>
             @* <th>
                 @Html.DisplayNameFor(model => model.CorrectAns)
@@ -43,45 +40,37 @@
             </th> *@
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            @* <td>
-                @Html.DisplayFor(modelItem => item.QuestionId)
-            </td> *@
-            <td style="word-wrap: break-word">
-                @Html.ActionLink(item.QuestionString, "GetQuestionById", "Questions", new {currId = item.QuestionId, travId = 0})
-            </td>
-            @* <td>
-                @Html.DisplayFor(modelItem => item.CorrectAns)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Explanation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Section)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsBookmarked)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Difficulty)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td> *@
-        </tr>
-}
-    </tbody>
+    <div class="accordion">
+        <tbody>
+            @foreach (var item in Model) {
+                    <tr>
+                        <td style="word-wrap: break-word">
+                            <div class="card">
+                                <div class="card-header">
+                                    <button type="button" class="btn btn-link btn-light btn-block" data-toggle="collapse" data-target="#questionid-@(item.QuestionId)" aria-expanded="false">
+                                        @Html.DisplayFor(modelItem => item.QuestionString)
+                                    </button>
+                                </div>
+                                <div id="questionid-@(item.QuestionId)" class="collapse">
+                                    <div class="card-body">
+                                        @foreach (var choice in item.AnswerChoices)
+                                        {
+                                            <label class="btn btn-light btn-block">
+                                                <input type="radio" name="questionChoice@(item.QuestionId)" /> @Html.DisplayFor(modelItem => choice.Choice).) @Html.DisplayFor(modelItem => choice.Details)
+                                            </label>
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </div>
 </table>
+
+
 
 <br />
 @* <div class="row">
