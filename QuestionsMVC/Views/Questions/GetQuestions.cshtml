@@ -33,13 +33,10 @@
                                     <div id="questionId-@(item.QuestionId)" class="collapse" aria-labelledby="questionHeading-@(item.QuestionId)">
                                         @foreach (var choice in item.AnswerChoices)
                                         {
-                                            <input 
-                                            type="radio"
-                                            class="btn btn-light btn-block"
-                                            id="choiceId-@(item.QuestionId)-letter@(choice.Choice)"
-                                            name="questionChoice-@(item.QuestionId)"
-                                            value="@Html.DisplayFor(modelItem => choice.Choice).) @Html.DisplayFor(modelItem => choice.Details)"
-                                            />
+                                            <button type="button" class="btn btn-light btn-block">
+                                                <input type="radio" id="choiceId-@(item.QuestionId)-letter@(choice.Choice)" name="questionChoice-@(item.QuestionId)" />
+                                                <label for="choiceId-@(item.QuestionId)-letter@(choice.Choice)">@Html.DisplayFor(modelItem => choice.Choice).) @Html.DisplayFor(modelItem => choice.Details)</label><br />
+                                            </button>
                                         }
                                     </div>
                                 </div>
